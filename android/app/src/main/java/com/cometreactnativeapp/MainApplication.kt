@@ -1,4 +1,4 @@
-package com.cometreactnativeapp
+package com.comet
 
 import android.app.Application
 import com.facebook.react.PackageList
