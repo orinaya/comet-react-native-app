@@ -1,28 +1,27 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-// import ProductsNavigator from './ProductsNavigator'
-// import ProfileNavigator from './ProfileNavigator'
-// import CameraNavigator from './CameraNavigator'
-// import MyTabBar from './Tabbar'
+import HomeNavigator from './HomeNavigator'
+import ProfileNavigator from './ProfileNavigator'
+import PlanetsNavigator from './PlanetsNavigator'
+import TravelsNavigator from './TravelsNavigator'
+import BottomTabs from './BottomTabs'
+
 // import { useState } from 'react'
-// import AuthNavigator from './AuthNavigator'
+
 
 const Tabs = createBottomTabNavigator()
 
 function MainNavigator() {
-  // const [isLoggedIn, setIsLoggedIn] = useState(false)
-  // if (!isLoggedIn) {
-  //   return <AuthNavigator />
-  // }
   return (
     <Tabs.Navigator
       screenOptions={{
         headerShown: false
       }}
-    // tabBar={(props) => <MyTabBar {...props} />}
+      tabBar={(props) => <BottomTabs {...props} />}
     >
-      {/* <Tabs.Screen name='Products' component={ProductsNavigator} />
-      <Tabs.Screen name='Camera' component={CameraNavigator} />
-      <Tabs.Screen name='Profile' component={ProfileNavigator} /> */}
+      <Tabs.Screen name='Home' component={HomeNavigator} />
+      <Tabs.Screen name='Planets' component={PlanetsNavigator} />
+      <Tabs.Screen name='Travels' component={TravelsNavigator} />
+      <Tabs.Screen name='Profile' component={ProfileNavigator} />
     </Tabs.Navigator>
   )
 }
