@@ -20,7 +20,7 @@ import BootSplash from 'react-native-bootsplash'
 //   }
 // }
 
-function App() {
+function App () {
   return (
     <GestureHandlerRootView>
       <NavigationContainer

@@ -1,11 +1,11 @@
-import { Text, View } from "react-native";
+import { Text, View } from 'react-native'
 
-function TravelsScreen() {
-    return (
-        <View>
-            <Text>Travels Screen</Text>
-        </View>
-    );
+function TravelsScreen () {
+  return (
+    <View>
+      <Text>Travels Screen</Text>
+    </View>
+  )
 }
 
-export default TravelsScreen;
+export default TravelsScreen

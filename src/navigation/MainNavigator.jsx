@@ -7,7 +7,7 @@ import BottomTabs from './BottomTabs'
 
 const Tabs = createBottomTabNavigator()
 
-function MainNavigator() {
+function MainNavigator () {
   return (
     <Tabs.Navigator
       screenOptions={{

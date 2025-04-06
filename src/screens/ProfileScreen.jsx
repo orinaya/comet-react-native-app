@@ -1,11 +1,11 @@
-import { Text, View } from "react-native";
+import { Text, View } from 'react-native'
 
-function ProfileScreen() {
-    return (
-        <View>
-            <Text>Profile Screen</Text>
-        </View>
-    );
+function ProfileScreen () {
+  return (
+    <View>
+      <Text>Profile Screen</Text>
+    </View>
+  )
 }
 
-export default ProfileScreen;
+export default ProfileScreen
