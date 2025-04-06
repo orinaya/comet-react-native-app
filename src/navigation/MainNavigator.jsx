@@ -5,9 +5,6 @@ import PlanetsNavigator from './PlanetsNavigator'
 import TravelsNavigator from './TravelsNavigator'
 import BottomTabs from './BottomTabs'
 
-// import { useState } from 'react'
-
-
 const Tabs = createBottomTabNavigator()
 
 function MainNavigator() {
