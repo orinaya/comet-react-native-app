@@ -10,13 +10,20 @@ function usePlanets () {
       setPlanets(data)
     }
   }
+  const refresh = async () => {
+    const data = await getAllPlanets()
+    if (data) {
+      setPlanets(data)
+    }
+  }
 
   useEffect(() => {
     getData()
   }, [])
 
   return {
-    planets
+    planets,
+    refresh
   }
 }
 

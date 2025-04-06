@@ -1,34 +1,39 @@
-import { Image, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import usePlanets from '../hooks/usePlanets'
+import { useEffect } from 'react'
+import { useIsFocused } from '@react-navigation/native'
+import PlanetsList from '../components/planets/PlanetsList'
+import LinearGradient from 'react-native-linear-gradient'
 
 function PlanetsScreen () {
-  const { planets } = usePlanets()
+  const { planets, refresh } = usePlanets()
+  const isFocused = useIsFocused()
 
-  const data = planets.results || []
+  const planetsResults = planets.results || []
+
+  useEffect(() => {
+    refresh()
+  }, [isFocused])
 
   return (
-    <View>
-      <Text>Planets Screen</Text>
-      {data.map((item) =>
-        <View key={item.ordre_order}>
-          <Text>{item.type_d_astre_type_of_planet}</Text>
-          <Text>{item.planete_planet}</Text>
-          <Text>{item.distance_moyenne_average_distance_x10_6_km}</Text>
-          <Text>{item.periode_de_revolution_jours_orbital_period_days}</Text>
-          <Text>{item.gravite_gravity_m_s2}</Text>
-          <Text>{item.temperature_moyenne_mean_temperature_degc}</Text>
-          <Text>{item.nombre_de_satellites_number_of_satellites}</Text>
-          <Text>{item.atmospheric_composition?.join(', ')}</Text>
-          {item.image?.url && (
-            <Image
-              source={{ uri: item.image.url }}
-              style={{ width: 100, height: 100 }}
-            />
-          )}
-        </View>
-      )}
-    </View>
+    <LinearGradient
+      colors={['#0D0D0D', '#1F1F1F']}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 0, y: 1 }}
+      style={styles.linearGradient}
+    >
+      <PlanetsList
+        planets={planetsResults}
+        onRefresh={refresh}
+      />
+    </LinearGradient>
   )
 }
+
+const styles = StyleSheet.create({
+  linearGradient: {
+    flex: 1
+  }
+})
 
 export default PlanetsScreen
