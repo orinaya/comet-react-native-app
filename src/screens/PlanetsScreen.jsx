@@ -5,7 +5,7 @@ import { useIsFocused } from '@react-navigation/native'
 import PlanetsList from '../components/planets/PlanetsList'
 import LinearGradient from 'react-native-linear-gradient'
 
-function PlanetsScreen () {
+function PlanetsScreen ({ navigation }) {
   const { planets, refresh } = usePlanets()
   const isFocused = useIsFocused()
 
@@ -15,6 +15,9 @@ function PlanetsScreen () {
     refresh()
   }, [isFocused])
 
+  const handlePress = (planet) => {
+    navigation.navigate('PlanetDetails', { planet })
+  }
   return (
     <LinearGradient
       colors={['#0D0D0D', '#1F1F1F']}
@@ -25,6 +28,7 @@ function PlanetsScreen () {
       <PlanetsList
         planets={planetsResults}
         onRefresh={refresh}
+        onPress={handlePress}
       />
     </LinearGradient>
   )

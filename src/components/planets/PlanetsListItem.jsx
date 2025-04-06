@@ -3,7 +3,7 @@ import { planetListItemStyle as styles } from './PlanetsStyle'
 import TextGroup from '../TextGroup'
 import ChipParticle from '../ChipParticle'
 
-function PlanetsListItem ({ planet }) {
+function PlanetsListItem ({ planet, onPress }) {
   const getTravelDuration = () => {
     const distance = planet.distance_moyenne_average_distance_x10_6_km * 1e6
     const speed = 58000
@@ -19,7 +19,7 @@ function PlanetsListItem ({ planet }) {
   const planetType = planet.type_d_astre_type_of_planet.split(' /')[0].split(' ')[0]
 
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => onPress(planet)}>
       {planet.image?.url && (
         <Image
           key={planet.image.url}
@@ -61,6 +61,7 @@ function PlanetsListItem ({ planet }) {
           icon='stopwatch'
           title='Duration'
           text={`${formattedTravelTime} days`}
+          flexDirection='row'
         />
       </View>
     </TouchableOpacity>

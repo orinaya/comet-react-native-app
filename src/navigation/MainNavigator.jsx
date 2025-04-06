@@ -15,10 +15,10 @@ function MainNavigator () {
       }}
       tabBar={(props) => <BottomTabs {...props} />}
     >
-      <Tabs.Screen name='Home' component={HomeNavigator} />
-      <Tabs.Screen name='Planets' component={PlanetsNavigator} />
-      <Tabs.Screen name='Travels' component={TravelsNavigator} />
-      <Tabs.Screen name='Profile' component={ProfileNavigator} />
+      <Tabs.Screen name='HomeTabs' component={HomeNavigator} />
+      <Tabs.Screen name='PlanetsTabs' component={PlanetsNavigator} />
+      <Tabs.Screen name='TravelsTabs' component={TravelsNavigator} />
+      <Tabs.Screen name='ProfileTabs' component={ProfileNavigator} />
     </Tabs.Navigator>
   )
 }

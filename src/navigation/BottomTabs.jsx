@@ -4,10 +4,10 @@ import { PlatformPressable } from '@react-navigation/elements'
 import Icon from '@react-native-vector-icons/ionicons'
 
 const icon = {
-  Home: 'home',
-  Planets: 'planet',
-  Travels: 'rocket',
-  Profile: 'person-circle'
+  HomeTabs: 'home',
+  PlanetsTabs: 'planet',
+  TravelsTabs: 'rocket',
+  ProfileTabs: 'person-circle'
 }
 
 function BottomTabs ({ state, descriptors, navigation }) {

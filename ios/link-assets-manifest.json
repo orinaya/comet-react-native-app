@@ -74,8 +74,32 @@
       "sha1": "04f69417392da5f6f831fd89e6ff5698323fdecb"
     },
     {
+      "path": "assets/fonts/neue-kaine-black.ttf",
+      "sha1": "a6daef01365015973383aace8949c8f55e24b9dc"
+    },
+    {
+      "path": "assets/fonts/neue-kaine-bold.ttf",
+      "sha1": "f62b57390285568eafdfc3d6313726191301edb4"
+    },
+    {
+      "path": "assets/fonts/neue-kaine-extraBold.ttf",
+      "sha1": "52d518bba249f55a4465ba0219b1e43baa1b2105"
+    },
+    {
+      "path": "assets/fonts/neue-kaine-light.ttf",
+      "sha1": "8eb489d4d144a60fd254e72323e1b819f8f66af3"
+    },
+    {
+      "path": "assets/fonts/neue-kaine-medium.ttf",
+      "sha1": "98adfbce088d768d3a67df9ff93d1cbb3560d8d2"
+    },
+    {
+      "path": "assets/fonts/neue-kaine-semiBold.ttf",
+      "sha1": "5f1b4dfe74230157dd4d109838c50c9f6dfb3ccb"
+    },
+    {
       "path": "assets/fonts/neue-kaine.ttf",
-      "sha1": "e96ace6c61b3d84e98e7b27592b18c5f81d3e89a"
+      "sha1": "7bb51fa52c7aa8862ed1d7f6c50c96f88871c834"
     }
   ]
 }

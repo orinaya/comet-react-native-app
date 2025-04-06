@@ -49,7 +49,6 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>neue-kaine.ttf</string>
 		<string>Montserrat-Black.ttf</string>
 		<string>Montserrat-BlackItalic.ttf</string>
 		<string>Montserrat-Bold.ttf</string>
@@ -68,6 +67,13 @@
 		<string>Montserrat-SemiBoldItalic.ttf</string>
 		<string>Montserrat-Thin.ttf</string>
 		<string>Montserrat-ThinItalic.ttf</string>
+		<string>neue-kaine-black.ttf</string>
+		<string>neue-kaine-bold.ttf</string>
+		<string>neue-kaine-extraBold.ttf</string>
+		<string>neue-kaine-light.ttf</string>
+		<string>neue-kaine-medium.ttf</string>
+		<string>neue-kaine-semiBold.ttf</string>
+		<string>neue-kaine.ttf</string>
 	</array>
 </dict>
 </plist>
