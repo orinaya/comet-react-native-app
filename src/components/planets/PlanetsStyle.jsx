@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native'
 
 export const planetListItemStyle = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    width: '100%',
+    flexDirection: 'column',
     gap: 12,
     backgroundColor: '#1C1C1C',
     color: '#fff',
@@ -24,8 +25,8 @@ export const planetListItemStyle = StyleSheet.create({
     fontSize: 16
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 140,
+    height: 140,
     borderRadius: 100,
     shadowColor: 'rgba(179,179,179,0.25)',
     shadowOffset: {
@@ -39,7 +40,7 @@ export const planetListItemStyle = StyleSheet.create({
   textGroupContainer: {
     flex: 1,
     flexDirection: 'column',
-    gap: '6'
+    gap: '16'
   },
   gas: {
     backgroundColor: '#B8E0D9'

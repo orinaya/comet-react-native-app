@@ -52,7 +52,7 @@ function BottomTabs ({ state, descriptors, navigation }) {
           >
             <Icon
               name={`${isFocused ? icon[route.name] : icon[route.name] + '-outline' || 'help-outline'}`}
-              size={30}
+              size={24}
             />
           </PlatformPressable>
         )

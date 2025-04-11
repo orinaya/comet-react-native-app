@@ -1,42 +1,21 @@
-import { StyleSheet } from 'react-native'
-import usePlanets from '../hooks/usePlanets'
-import { useEffect } from 'react'
-import { useIsFocused } from '@react-navigation/native'
-import PlanetsList from '../components/planets/PlanetsList'
-import LinearGradient from 'react-native-linear-gradient'
+import { StyleSheet, View } from 'react-native'
+import FlatListAnimated from '../components/FlatListAnimated'
 
-function PlanetsScreen ({ navigation }) {
-  const { planets, refresh } = usePlanets()
-  const isFocused = useIsFocused()
-
-  const planetsResults = planets.results || []
-
-  useEffect(() => {
-    refresh()
-  }, [isFocused])
-
-  const handlePress = (planet) => {
-    navigation.navigate('PlanetDetails', { planet })
-  }
+function PlanetsScreen () {
   return (
-    <LinearGradient
-      colors={['#0D0D0D', '#1F1F1F']}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 0, y: 1 }}
-      style={styles.linearGradient}
-    >
-      <PlanetsList
-        planets={planetsResults}
-        onRefresh={refresh}
-        onPress={handlePress}
-      />
-    </LinearGradient>
+    <View style={styles.container}>
+      <FlatListAnimated />
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
-  linearGradient: {
-    flex: 1
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+    backgroundColor: '#0D0D0D'
   }
 })
 
