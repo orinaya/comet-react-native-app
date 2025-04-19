@@ -4,7 +4,7 @@ import Animated, {
   useAnimatedStyle
 } from 'react-native-reanimated'
 import { scaleAnimation, opacityAnimation } from './animations'
-import PlanetsListItem from '../planets/PlanetsListItem'
+import PlanetsListItem from '../../planets/PlanetsListItem'
 
 const ITEM_WIDTH = 260
 

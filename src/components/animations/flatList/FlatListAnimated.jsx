@@ -9,9 +9,9 @@ import Animated, {
   useAnimatedScrollHandler
 } from 'react-native-reanimated'
 
-import AnimatedItem from './flatListAnimated/AnimatedItem'
+import AnimatedItem from './AnimatedItem'
 import { useCallback, useEffect, useRef } from 'react'
-import usePlanets from '../hooks/usePlanets'
+import usePlanets from '../../../hooks/usePlanets'
 import { useNavigation } from '@react-navigation/native'
 
 const ITEM_WIDTH = 260

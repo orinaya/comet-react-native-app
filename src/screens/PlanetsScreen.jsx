@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import FlatListAnimated from '../components/FlatListAnimated'
+import FlatListAnimated from '../components/animations/flatList/FlatListAnimated'
 import Meteors from '../components/meteor/Meteors'
 import usePlanets from '../hooks/usePlanets'
 
