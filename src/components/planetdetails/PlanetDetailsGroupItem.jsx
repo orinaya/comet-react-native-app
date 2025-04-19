@@ -1,25 +1,14 @@
 import { StyleSheet, View } from 'react-native'
 import TextGroup from '../TextGroup'
 
-function PlanetDetailsGroupItem ({ formattedTravelTime, distance, speed }) {
+function PlanetDetailsGroupItem ({ icon, title, text, chemical }) {
   return (
     <View style={styles.container}>
       <TextGroup
-        icon='earth'
-        title='Distance'
-        text={`${distance} kms`}
-        flexDirection='column'
-      />
-      <TextGroup
-        icon='stopwatch'
-        title='Duration'
-        text={`${formattedTravelTime} days`}
-        flexDirection='column'
-      />
-      <TextGroup
-        icon='timer'
-        title='Speed'
-        text='58k km/h'
+        icon={icon}
+        title={title}
+        text={text}
+        chemical={chemical}
         flexDirection='column'
       />
     </View>
@@ -29,8 +18,7 @@ function PlanetDetailsGroupItem ({ formattedTravelTime, distance, speed }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%'
+    justifyContent: 'space-between'
   }
 
 })

@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    marginTop: 40
   },
   titleContainer: {
     flexDirection: 'column',

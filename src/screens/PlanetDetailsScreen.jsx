@@ -1,7 +1,10 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import PlanetDetailsHeader from '../components/planetdetails/PlanetDetailsHeader'
 import PlanetDetailsGroup from '../components/planetdetails/PlanetDetailsGroup'
 import Meteors from '../components/animations/meteor/Meteors'
+import PlanetDetailsGroupItem from '../components/planetdetails/PlanetDetailsGroupItem'
+import { getPlanetData } from '../utils/getPlanetData'
+import Button from '../components/ButtonParticle'
 
 function PlanetDetailScreen ({ navigation, route }) {
   const { planet } = route.params || {}
@@ -16,22 +19,14 @@ function PlanetDetailScreen ({ navigation, route }) {
   const planetName = planet.planete_planet.split('/')[0].trim()
   const planetType = planet.type_d_astre_type_of_planet.split(' /')[0].trim()
 
-  const getTravelDuration = () => {
-    const distance = planet.distance_moyenne_average_distance_x10_6_km * 1e6
-    const speed = 58000
-    const durationInHours = distance / speed
-    const durationInDays = durationInHours / 24
-    return durationInDays
-  }
-
-  const travelTimeInDays = getTravelDuration()
-  const formattedTravelTime = travelTimeInDays.toFixed(0) || 0
-
-  const distance = planet.distance_moyenne_average_distance_x10_6_km
-  console.log(distance)
-
+  const planetData = getPlanetData(planet)
   return (
-    <View style={{ flex: 1, margin: 12 }}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.scrollContent}
+      keyboardShouldPersistTaps='handled'
+      showsVerticalScrollIndicator={false}
+    >
       <PlanetDetailsHeader
         title={planetName}
         type={planetType}
@@ -45,13 +40,41 @@ function PlanetDetailScreen ({ navigation, route }) {
           />
         )}
       </View>
-      <PlanetDetailsGroup groupTitle='Journey' formattedTravelTime={formattedTravelTime} distance={distance} />
-      <PlanetDetailsGroup groupTitle='Journey' formattedTravelTime={formattedTravelTime} distance={distance} />
+
+      {planetData.map((section, index) =>
+        Object.entries(section).map(([key, value]) => (
+          <PlanetDetailsGroup
+            key={`${key}-${index}`}
+            groupTitle={value.groupTitle}
+          >
+            {value.data.map((item, index) => (
+              <PlanetDetailsGroupItem
+                key={`${key}-item-${index}`}
+                icon={item.icon}
+                title={item.title}
+                text={item.text}
+                chemical={item.chemical}
+              />
+            ))}
+          </PlanetDetailsGroup>
+        ))
+      )}
+      <View style={styles.buttonContainer}>
+        <Button variant='accent' icon='ticket' style={styles.button}>
+          Get your ticket
+        </Button>
+      </View>
       <Meteors number={10} />
-    </View>
+    </ScrollView>
   )
 }
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  scrollContent: {
+    paddingBottom: 100
+  },
   imageContainer: {
     width: '100%',
     justifyContent: 'center',
@@ -62,6 +85,12 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '20'
   }
 })
 

@@ -68,8 +68,8 @@ function PlanetsListItem ({ planet, onPress }) {
           text={`${formattedTravelTime} days`}
           flexDirection='row'
         />
-        <Button variant='accent' icon='ticket'>
-          Get your ticket
+        <Button variant='accent' icon='eye' onPress={() => onPress(planet)}>
+          See more
         </Button>
       </View>
     </TouchableOpacity>

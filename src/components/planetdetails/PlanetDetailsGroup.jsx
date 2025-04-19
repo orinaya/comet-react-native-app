@@ -1,15 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
-import PlanetDetailsGroupItem from './PlanetDetailsGroupItem'
 
-function PlanetDetailsGroup ({ groupTitle, formattedTravelTime, distance, speed }) {
+function PlanetDetailsGroup ({ groupTitle, children }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{groupTitle}</Text>
-      <PlanetDetailsGroupItem
-        formattedTravelTime={formattedTravelTime}
-        distance={distance}
-        speed={speed}
-      />
+      <View style={[styles.childrenContainer, { flexDirection: 'column' }]}>
+        {children}
+      </View>
     </View>
   )
 }
@@ -19,7 +16,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#1C1C1C',
     flexDirection: 'column',
     color: '#fff',
-    flex: 1,
     paddingVertical: 20,
     paddingHorizontal: 15,
     marginHorizontal: 12,
@@ -32,7 +28,13 @@ const styles = StyleSheet.create({
     fontFamily: 'neue-kaine-semiBold',
     fontSize: 18,
     textAlign: 'left',
-    width: '100%'
+    width: '100%',
+    marginBottom: 8
+  },
+  childrenContainer: {
+    justifyContent: 'center',
+    width: '100%',
+    gap: 8
   }
 
 })
