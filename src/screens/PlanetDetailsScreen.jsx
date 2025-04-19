@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import PlanetDetailsHeader from '../components/planetdetails/PlanetDetailsHeader'
-import LinearGradient from 'react-native-linear-gradient'
 import PlanetDetailsGroup from '../components/planetdetails/PlanetDetailsGroup'
+import Meteors from '../components/animations/meteor/Meteors'
 
 function PlanetDetailScreen ({ navigation, route }) {
   const { planet } = route.params || {}
@@ -31,36 +31,27 @@ function PlanetDetailScreen ({ navigation, route }) {
   console.log(distance)
 
   return (
-    <LinearGradient
-      colors={['#0D0D0D', '#1F1F1F']}
-      start={{ x: 0, y: 1 }}
-      end={{ x: 0, y: 1 }}
-      style={styles.linearGradient}
-    >
-      <View style={{ flex: 1, margin: 12 }}>
-        <PlanetDetailsHeader
-          title={planetName}
-          type={planetType}
-          onPress={() => navigation.goBack()}
-        />
-        <View style={styles.imageContainer}>
-          {planet.image?.url && (
-            <Image
-              source={{ uri: planet.image.url }}
-              style={styles.image}
-            />
-          )}
-        </View>
-        <PlanetDetailsGroup groupTitle='Journey' formattedTravelTime={formattedTravelTime} distance={distance} />
-        <PlanetDetailsGroup groupTitle='Journey' formattedTravelTime={formattedTravelTime} distance={distance} />
+    <View style={{ flex: 1, margin: 12 }}>
+      <PlanetDetailsHeader
+        title={planetName}
+        type={planetType}
+        onPress={() => navigation.goBack()}
+      />
+      <View style={styles.imageContainer}>
+        {planet.image?.url && (
+          <Image
+            source={{ uri: planet.image.url }}
+            style={styles.image}
+          />
+        )}
       </View>
-    </LinearGradient>
+      <PlanetDetailsGroup groupTitle='Journey' formattedTravelTime={formattedTravelTime} distance={distance} />
+      <PlanetDetailsGroup groupTitle='Journey' formattedTravelTime={formattedTravelTime} distance={distance} />
+      <Meteors number={10} />
+    </View>
   )
 }
 const styles = StyleSheet.create({
-  linearGradient: {
-    flex: 1
-  },
   imageContainer: {
     width: '100%',
     justifyContent: 'center',

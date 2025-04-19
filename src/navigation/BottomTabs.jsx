@@ -48,11 +48,12 @@ function BottomTabs ({ state, descriptors, navigation }) {
             testID={options.tabBarButtonTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={styles.button}
+            style={[styles.button, isFocused ? styles.buttonFillBackground : styles.iconOutline]}
           >
             <Icon
               name={`${isFocused ? icon[route.name] : icon[route.name] + '-outline' || 'help-outline'}`}
               size={24}
+              style={[styles.icon, isFocused ? styles.iconFill : styles.iconOutline]}
             />
           </PlatformPressable>
         )
@@ -64,14 +65,29 @@ function BottomTabs ({ state, descriptors, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    backgroundColor: 'red'
+    backgroundColor: '#141414',
+    borderRadius: 40,
+    position: 'absolute',
+    bottom: 20,
+    marginHorizontal: 10,
+    borderColor: '#212121',
+    borderWidth: 1
   },
   button: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 15,
-    backgroundColor: 'red'
+    borderRadius: 40
+  },
+  iconOutline: {
+    color: '#fff'
+  },
+  buttonFillBackground: {
+    backgroundColor: '#F3FFBD'
+  },
+  iconFill: {
+    color: '#536600'
   }
 })
 

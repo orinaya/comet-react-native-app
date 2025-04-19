@@ -6,26 +6,26 @@
  */
 import 'react-native-reanimated'
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native'
 import MainNavigator from './navigation/MainNavigator'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 // import LoadingScreen from './screens/LoadingScreen'
-// import { Colors } from './styles/Colors'
 import BootSplash from 'react-native-bootsplash'
-
-// const myTheme = {
-//   ...DefaultTheme,
-//   colors: {
-//     ...Colors
-//   }
-// }
+const Theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: '#0D0D0D',
+    text: '#fff'
+  }
+}
 
 function App () {
   return (
     <GestureHandlerRootView>
       <NavigationContainer
         // fallback={<LoadingScreen />}
-        // theme={myTheme}
+        theme={Theme}
         onReady={() => {
           BootSplash.hide({ fade: true })
         }}

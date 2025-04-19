@@ -1,19 +1,19 @@
 import { StyleSheet, Text, View } from 'react-native'
 import FlatListAnimated from '../components/animations/flatList/FlatListAnimated'
-import Meteors from '../components/animations/meteor/Meteors'
 import usePlanets from '../hooks/usePlanets'
+import Meteors from '../components/animations/meteor/Meteors'
 
 function PlanetsScreen () {
   const { planets } = usePlanets()
   const planetsResults = planets.results || []
   return (
     <View style={styles.container}>
-      <Meteors number={10} />
       <Text style={styles.title}>Select your destination</Text>
       <View style={styles.resultsContainer}>
         <Text style={styles.results}>{planetsResults.length} results</Text>
       </View>
       <FlatListAnimated />
+      <Meteors number={10} />
     </View>
   )
 }
@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#0D0D0D',
     position: 'relative'
   },
   title: {
