@@ -14,7 +14,7 @@ function BottomTabs ({ state, descriptors, navigation }) {
   const { buildHref } = useLinkBuilder()
 
   return (
-    <View style={{ flexDirection: 'row' }}>
+    <View style={styles.container}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key]
 
@@ -62,11 +62,16 @@ function BottomTabs ({ state, descriptors, navigation }) {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    backgroundColor: 'red'
+  },
   button: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 15
+    paddingVertical: 15,
+    backgroundColor: 'red'
   }
 })
 

@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native'
-import Meteors from '../components/meteor/Meteors'
+import Meteors from '../components/animations/meteor/Meteors'
 
 function HomeScreen () {
   return (
