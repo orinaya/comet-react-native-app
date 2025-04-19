@@ -18,7 +18,7 @@ export const scaleAnimation = (udv, index) => {
         (index + 1) * ITEM_WIDTH,
         (index + 2) * ITEM_WIDTH
       ],
-      [0.5, 0.7, 1, 0.7, 0.5], // scale factor depending on the proximity to the center
+      [0.5, 0.8, 1, 0.8, 0.5], // scale factor depending on the proximity to the center
       Extrapolation.CLAMP
       // stops values between bounds (0.5 to 1)
     )

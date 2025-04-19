@@ -1,19 +1,18 @@
 import { StyleSheet } from 'react-native'
 
 export const planetListItemStyle = StyleSheet.create({
+  title: {
+    fontSize: 40,
+    fontFamily: 'neue-kaine',
+    color: '#fff'
+  },
   container: {
     width: '100%',
     flexDirection: 'column',
     gap: 12,
-    backgroundColor: '#1C1C1C',
-    color: '#fff',
-    flex: 1,
-    paddingVertical: 20,
-    paddingHorizontal: 15,
-    marginHorizontal: 12,
-    borderRadius: 18,
     marginVertical: 6,
-    alignItems: 'center'
+    alignItems: 'center',
+    minHeight: 515
   },
   titleContainer: {
     flexDirection: 'row',
@@ -21,12 +20,11 @@ export const planetListItemStyle = StyleSheet.create({
   },
   textTitleContainer: {
     color: 'white',
-    fontFamily: 'neue-kaine',
     fontSize: 16
   },
   image: {
-    width: 140,
-    height: 140,
+    width: 200,
+    height: 200,
     borderRadius: 100,
     shadowColor: 'rgba(179,179,179,0.25)',
     shadowOffset: {
@@ -40,7 +38,12 @@ export const planetListItemStyle = StyleSheet.create({
   textGroupContainer: {
     flex: 1,
     flexDirection: 'column',
-    gap: '16'
+    gap: '8',
+    backgroundColor: '#1C1C1C',
+    color: '#fff',
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    borderRadius: 18
   },
   gas: {
     backgroundColor: '#B8E0D9'
@@ -68,6 +71,7 @@ export const planetListItemStyle = StyleSheet.create({
 export const PlanetsListStyle = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    gap: 8
+    gap: 8,
+    flex: 1
   }
 })

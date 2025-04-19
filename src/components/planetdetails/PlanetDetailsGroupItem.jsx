@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native'
 import TextGroup from '../TextGroup'
 
-function PlanetDetailsGroupItem({ formattedTravelTime, distance, speed }) {
+function PlanetDetailsGroupItem ({ formattedTravelTime, distance, speed }) {
   return (
     <View style={styles.container}>
       <TextGroup

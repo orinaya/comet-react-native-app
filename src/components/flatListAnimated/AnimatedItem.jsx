@@ -42,7 +42,8 @@ function AnimatedItem ({ index, item, transX, onPress }) {
 const styles = StyleSheet.create({
   box: {
     width: ITEM_WIDTH,
-    height: 340,
+    height: ITEM_WIDTH,
+    minHeight: 515,
     borderRadius: 20,
     alignItems: 'center',
     justifyContent: 'center',

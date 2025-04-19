@@ -2,6 +2,7 @@ import { Image, Text, TouchableOpacity, View } from 'react-native'
 import { planetListItemStyle as styles } from './PlanetsStyle'
 import TextGroup from '../TextGroup'
 import ChipParticle from '../ChipParticle'
+import Button from '../ButtonParticle'
 
 function PlanetsListItem ({ planet, onPress }) {
   const getTravelDuration = () => {
@@ -20,6 +21,7 @@ function PlanetsListItem ({ planet, onPress }) {
 
   return (
     <TouchableOpacity style={styles.container} onPress={() => onPress(planet)}>
+      <Text style={styles.title}>{planetName}</Text>
       {planet.image?.url && (
         <Image
           key={planet.image.url}
@@ -28,28 +30,31 @@ function PlanetsListItem ({ planet, onPress }) {
         />
       )}
       <View key={planet.ordre_order} style={styles.textGroupContainer}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.textTitleContainer}>{planetName}</Text>
-
-          <ChipParticle
-            planetType={planetType}
-            chipBackgroundColor={
-              planetType === 'Gas'
-                ? styles.gas
-                : planetType === 'Terrestrial'
-                  ? styles.terrestrial
-                  : styles.star
-            }
-            chipTextColor={
-              planetType === 'Gas'
-                ? styles.gasText
-                : planetType === 'Terrestrial'
-                  ? styles.terrestrialText
-                  : styles.starText
-            }
-          />
-
-        </View>
+        <TextGroup
+          icon='earth'
+          title='Type'
+          text={
+            <>
+              <ChipParticle
+                planetType={planetType}
+                chipBackgroundColor={
+                  planetType === 'Gas'
+                    ? styles.gas
+                    : planetType === 'Terrestrial'
+                      ? styles.terrestrial
+                      : styles.star
+                }
+                chipTextColor={
+                  planetType === 'Gas'
+                    ? styles.gasText
+                    : planetType === 'Terrestrial'
+                      ? styles.terrestrialText
+                      : styles.starText
+                }
+              />
+            </>
+          }
+        />
         <TextGroup
           icon='earth'
           title='Distance'
@@ -63,6 +68,9 @@ function PlanetsListItem ({ planet, onPress }) {
           text={`${formattedTravelTime} days`}
           flexDirection='row'
         />
+        <Button variant='accent' icon='ticket'>
+          Get your ticket
+        </Button>
       </View>
     </TouchableOpacity>
   )

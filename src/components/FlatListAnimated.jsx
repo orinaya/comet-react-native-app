@@ -86,18 +86,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh'
+    justifyContent: 'center'
   },
   listContainer: {
-    height: '100%',
     alignItems: 'center',
     justifyContent: 'center'
   },
   list: {
-    height: '100vh',
     flexGrow: 0,
     paddingHorizontal: (index) => (index === 0 ? 80 : ITEM_WIDTH)
+  },
+  results: {
+    color: '#fff'
   },
   box: {
     width: ITEM_WIDTH,
@@ -119,6 +119,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: '#fff'
   }
+
 })
 
 export default FlatListAnimated
