@@ -1,17 +1,23 @@
-import { ScrollView, StyleSheet, Text } from 'react-native'
+import { ScrollView, StyleSheet } from 'react-native'
 import Meteors from '../components/animations/meteor/Meteors'
 import useHubble from '../hooks/useHubble'
 import Slider from '../components/animations/carousel/Slider'
-
+import HomeHero from '../components/home/HomeHero'
+import { useNavigation } from '@react-navigation/native'
 function HomeScreen () {
   const { hubblePictures } = useHubble()
   const hubbleResults = hubblePictures.results || []
 
+  const navigation = useNavigation()
+  const handlePress = () => {
+    navigation.navigate('PlanetsTabs', {
+      screen: 'Planets'
+    })
+  }
+
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.text}>
-        Welcome voyager
-      </Text>
+      <HomeHero onPress={handlePress} />
       <Slider itemList={hubbleResults} />
       <Meteors number={10} />
     </ScrollView>
@@ -21,7 +27,8 @@ function HomeScreen () {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: 'relative'
+    position: 'relative',
+    marginBottom: 100
   },
   text: {
     fontSize: 32,

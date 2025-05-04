@@ -69,7 +69,6 @@ function SliderItem ({ item, index, scrollX }) {
 
 const styles = StyleSheet.create({
   card: {
-    // marginRight: 16,
     justifyContent: 'center',
     alignItems: 'center',
     gap: 20,
@@ -78,7 +77,7 @@ const styles = StyleSheet.create({
   },
   innerContainer: {
     height: 400,
-    borderRadius: 12,
+    borderRadius: 20,
     overflow: 'hidden',
     position: 'relative',
     backgroundColor: '#000'

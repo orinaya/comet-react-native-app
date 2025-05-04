@@ -86,7 +86,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'flex-start',
+    marginTop: 20
   },
   listContainer: {
     alignItems: 'center',

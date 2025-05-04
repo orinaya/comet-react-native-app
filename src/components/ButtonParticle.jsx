@@ -1,11 +1,11 @@
 import Icon from '@react-native-vector-icons/ionicons'
 import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 
-function Button ({ children, variant = 'default', icon }) {
+function Button ({ children, variant = 'default', icon, onPress }) {
   const variantStyle = styles[variant] || styles.default
 
   return (
-    <TouchableOpacity style={[styles.button, variantStyle]}>
+    <TouchableOpacity style={[styles.button, variantStyle]} onPress={onPress}>
       <Icon name={`${icon}-outline`} size={16} style={variantStyle} />
       <Text style={[styles.text, variantStyle]}>{children}</Text>
     </TouchableOpacity>

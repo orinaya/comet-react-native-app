@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
-import Logo from '../../assets/images/comet-logo.png'
+import Logo from '../assets/images/comet-logo.png'
 
 function HeaderComponent () {
   return (
@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    backgroundColor: 'transparent'
   },
   logo: {
     width: 70,
