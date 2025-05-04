@@ -8,8 +8,8 @@ import PlanetsListItem from '../../planets/PlanetsListItem'
 
 const ITEM_WIDTH = 260
 
-function AnimatedItem ({ index, item, transX, onPress }) {
-  const derivedValue = useDerivedValue(() => transX.value)
+function AnimatedItem ({ index, item, scrollX, onPress }) {
+  const derivedValue = useDerivedValue(() => scrollX.value)
 
   const animatedStyle = useAnimatedStyle(() => {
     return {

@@ -10,36 +10,65 @@ import Animated, {
 } from 'react-native-reanimated'
 
 import AnimatedItem from './AnimatedItem'
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import usePlanets from '../../../hooks/usePlanets'
 import { useNavigation } from '@react-navigation/native'
+import Pagination from '../pagination/Pagination'
 
 const ITEM_WIDTH = 260
 const AnimatedFlatList = Animated.FlatList // Animated Wrapper around Flatlist (provided by Reanimated)
 
 function FlatListAnimated () {
+  const [paginationIndex, setPaginationIndex] = useState()
   const { planets } = usePlanets()
-
   const planetsResults = planets.results || []
+
   const navigation = useNavigation()
   const handlePress = (planet) => {
     navigation.navigate('PlanetDetails', { planet })
   }
-  console.log(planets)
-  // Shared value used to stock the horizontal scroll position
-  const transX = useSharedValue(0)
 
-  // render items
-  const renderItem = useCallback(({ item, index }) => {
-    return <AnimatedItem index={index} item={item} transX={transX} onPress={handlePress} />
-  }, [])
+  // Shared value used to stock the horizontal scroll position
+  const scrollX = useSharedValue(0)
 
   // Update transX value on horizontal scroll
   const scrollHandler = useAnimatedScrollHandler({
     onScroll: (event) => {
-      transX.value = event.contentOffset.x
+      scrollX.value = event.contentOffset.x
     }
   })
+
+  const flatListRef = useRef(null)
+
+  const onViewableItemsChanged = ({ viewableItems }) => {
+    if
+    (viewableItems[0].index !== undefined &&
+      viewableItems[0].index !== null
+    ) {
+      setPaginationIndex(viewableItems[0].index)
+    }
+  }
+  const viewabilityConfig = {
+    itemVisiblePercentThreshold: 50
+  }
+
+  const viewabilityConfigCallbackPairs = useRef([
+    { viewabilityConfig, onViewableItemsChanged }
+  ])
+
+  const keyExtractor = useCallback((item, index) => `${item.id}-${index}`, [])
+
+  // render items
+  const renderItem = useCallback(({ item, index }) => {
+    return (
+      <AnimatedItem
+        index={index}
+        item={item}
+        onPress={handlePress}
+        scrollX={scrollX}
+      />
+    )
+  }, [])
 
   const getItemLayout = useCallback(
     (data, index) => ({
@@ -55,9 +84,6 @@ function FlatListAnimated () {
     }
   }, [planetsResults])
 
-  const flatListRef = useRef(null)
-
-  const keyExtractor = useCallback((item, index) => `${item.id}-${index}`, [])
   return (
     <View style={styles.container}>
       <View style={styles.listContainer}>
@@ -76,6 +102,13 @@ function FlatListAnimated () {
           keyExtractor={keyExtractor}
           initialScrollIndex={0}
           getItemLayout={getItemLayout}
+          scrollX={scrollX}
+          viewabilityConfigCallbackPairs={viewabilityConfigCallbackPairs.current}
+        />
+        <Pagination
+          items={planetsResults}
+          scrollX={scrollX}
+          paginationIndex={paginationIndex}
         />
       </View>
     </View>

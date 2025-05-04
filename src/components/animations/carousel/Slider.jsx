@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import SliderItem from './SliderItem'
 import Animated, { useAnimatedScrollHandler, useSharedValue } from 'react-native-reanimated'
-import Pagination from './Pagination'
+import Pagination from '../pagination/Pagination'
 import { useRef, useState } from 'react'
 
 function Slider ({ itemList }) {
