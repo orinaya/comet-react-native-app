@@ -1,3 +1,4 @@
+// This component is a Carousel of hubble pictures
 import { StyleSheet, Text, View } from 'react-native'
 import SliderItem from './SliderItem'
 import Animated, { useAnimatedScrollHandler, useSharedValue } from 'react-native-reanimated'

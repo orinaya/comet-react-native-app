@@ -31,7 +31,7 @@ function FlatListAnimated () {
   // Shared value used to stock the horizontal scroll position
   const scrollX = useSharedValue(0)
 
-  // Update transX value on horizontal scroll
+  // Update scrollX value on horizontal scroll
   const scrollHandler = useAnimatedScrollHandler({
     onScroll: (event) => {
       scrollX.value = event.contentOffset.x

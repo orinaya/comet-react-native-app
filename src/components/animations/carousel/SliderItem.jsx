@@ -1,3 +1,4 @@
+// This component is an item from the Carousel
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import ChipParticle from '../../ChipParticle'

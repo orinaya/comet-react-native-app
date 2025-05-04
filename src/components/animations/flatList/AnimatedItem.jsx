@@ -1,3 +1,4 @@
+// This component is an item from the Flatlist
 import { StyleSheet } from 'react-native'
 import Animated, {
   useDerivedValue,

@@ -10,21 +10,23 @@ const api = axios.create({
   timeout: 10000
 })
 
+// API solar system
 const getAllPlanets = async () => {
   try {
     const response = await api.get('/donnees-systeme-solaire-solar-system-data/records')
     return response.data
   } catch (error) {
-    console.error('Erreur fetch planets:', error)
+    console.error('Error fetch planets:', error)
   }
 }
 
+// API hubble pictures
 const getAllHubblePictures = async () => {
   try {
     const response = await api.get('/nasahubble/records')
     return response.data
   } catch (error) {
-    console.error('Erreur fetch hubble:', error)
+    console.error('Error fetch hubble:', error)
   }
 }
 

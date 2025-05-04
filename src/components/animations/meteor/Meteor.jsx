@@ -8,7 +8,6 @@ function Meteor ({ duration, left, top }) {
   useEffect(() => {
     const animation = Animated.loop(
       Animated.sequence([
-        // Animated.delay(delay),
         Animated.parallel([
           Animated.timing(translateX, {
             toValue: -600,
@@ -60,7 +59,6 @@ function Meteor ({ duration, left, top }) {
 const styles = StyleSheet.create({
   meteor: {
     position: 'absolute',
-    // top: -80,
     height: 1,
     width: 60,
     backgroundColor: '#94a3b8',

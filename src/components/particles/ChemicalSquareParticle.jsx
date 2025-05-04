@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native'
-import { elementStyles } from '../utils/chemicalColors'
+import { elementStyles } from '../../utils/chemicalColors'
 
 function ChemicalSquare ({ text }) {
   const element = elementStyles[text] || {
