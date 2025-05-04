@@ -1,10 +1,10 @@
 import { StyleSheet, View } from 'react-native'
-import TextGroup from '../TextGroup'
+import TextGroupComponent from '../TextGroupComponent'
 
 function PlanetDetailsGroupItem ({ icon, title, text, chemical }) {
   return (
     <View style={styles.container}>
-      <TextGroup
+      <TextGroupComponent
         icon={icon}
         title={title}
         text={text}

@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native'
 import { elementStyles } from '../../utils/chemicalColors'
 
-function ChemicalSquare ({ text }) {
+function ChemicalSquareParticle ({ text }) {
   const element = elementStyles[text] || {
     backgroundColor: '#fff',
     textColor: '#000'
@@ -38,4 +38,4 @@ const styles = {
     fontWeight: 'bold'
   }
 }
-export default ChemicalSquare
+export default ChemicalSquareParticle

@@ -4,7 +4,7 @@ import PlanetDetailsGroup from '../components/planetdetails/PlanetDetailsGroup'
 import Meteors from '../components/animations/meteor/Meteors'
 import PlanetDetailsGroupItem from '../components/planetdetails/PlanetDetailsGroupItem'
 import { getPlanetData } from '../utils/getPlanetData'
-import Button from '../components/ButtonParticle'
+import Button from '../components/particles/ButtonParticle'
 
 function PlanetDetailScreen ({ navigation, route }) {
   const { planet } = route.params || {}

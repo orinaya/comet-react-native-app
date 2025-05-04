@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native'
 import Background from '../../assets/images/home-banner.jpg'
-import Button from '../ButtonParticle'
+import Button from '../particles/ButtonParticle'
 import Logo from '../../assets/images/comet-logo.png'
 function HomeHero ({ onPress }) {
   return (

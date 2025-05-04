@@ -1,8 +1,8 @@
 import Icon from '@react-native-vector-icons/ionicons'
 import { StyleSheet, Text, View } from 'react-native'
-import ChemicalSquare from './ChemicalSquare'
+import ChemicalSquareParticle from './particles/ChemicalSquareParticle'
 
-function TextGroup ({ title, text, icon, chemical }) {
+function TextGroupComponent ({ title, text, icon, chemical }) {
   const isLogoIcon = icon.startsWith('logo-')
   const iconName = isLogoIcon ? icon : `${icon}-outline`
 
@@ -18,7 +18,7 @@ function TextGroup ({ title, text, icon, chemical }) {
         ? (
           <View style={styles.chemicalContainer}>
             {chemical.map((element, index) => (
-              <ChemicalSquare
+              <ChemicalSquareParticle
                 key={index}
                 text={element}
               />
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default TextGroup
+export default TextGroupComponent

@@ -1,8 +1,8 @@
 import { Image, Text, TouchableOpacity, View } from 'react-native'
 import { planetListItemStyle as styles } from './PlanetsStyle'
-import TextGroup from '../TextGroup'
-import ChipParticle from '../ChipParticle'
-import Button from '../ButtonParticle'
+import TextGroupComponent from '../TextGroupComponent'
+import ChipParticle from '../particles/ChipParticle'
+import Button from '../particles/ButtonParticle'
 
 function PlanetsListItem ({ planet, onPress }) {
   const getTravelDuration = () => {
@@ -30,7 +30,7 @@ function PlanetsListItem ({ planet, onPress }) {
         />
       )}
       <View key={planet.ordre_order} style={styles.textGroupContainer}>
-        <TextGroup
+        <TextGroupComponent
           icon='earth'
           title='Type'
           text={
@@ -55,14 +55,14 @@ function PlanetsListItem ({ planet, onPress }) {
             </>
           }
         />
-        <TextGroup
+        <TextGroupComponent
           icon='earth'
           title='Distance'
           text={planet.distance_moyenne_average_distance_x10_6_km
             ? `${planet.distance_moyenne_average_distance_x10_6_km} kms`
             : 'Inconnu'}
         />
-        <TextGroup
+        <TextGroupComponent
           icon='stopwatch'
           title='Duration'
           text={`${formattedTravelTime} days`}

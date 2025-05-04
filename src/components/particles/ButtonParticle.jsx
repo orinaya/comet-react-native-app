@@ -1,7 +1,7 @@
 import Icon from '@react-native-vector-icons/ionicons'
 import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 
-function Button ({ children, variant = 'default', icon, onPress }) {
+function ButtonParticle ({ children, variant = 'default', icon, onPress }) {
   const variantStyle = styles[variant] || styles.default
 
   return (
@@ -60,4 +60,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Button
+export default ButtonParticle

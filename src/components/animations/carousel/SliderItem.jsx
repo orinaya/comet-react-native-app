@@ -1,7 +1,7 @@
 // This component is an item from the Carousel
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
-import ChipParticle from '../../ChipParticle'
+import ChipParticle from '../../particles/ChipParticle'
 import Animated, { Extrapolation, interpolate, useAnimatedStyle } from 'react-native-reanimated'
 
 function SliderItem ({ item, index, scrollX }) {
