@@ -36,7 +36,7 @@ function PlanetsListItem ({ planet, onPress }) {
           text={
             <>
               <ChipParticle
-                planetType={planetType}
+                text={planetType}
                 chipBackgroundColor={
                   planetType === 'Gas'
                     ? styles.gas

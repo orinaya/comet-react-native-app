@@ -12,13 +12,23 @@ const api = axios.create({
 
 const getAllPlanets = async () => {
   try {
-    const response = await api.get('/records')
+    const response = await api.get('/donnees-systeme-solaire-solar-system-data/records')
     return response.data
   } catch (error) {
-    console.error(error)
+    console.error('Erreur fetch planets:', error)
+  }
+}
+
+const getAllHubblePictures = async () => {
+  try {
+    const response = await api.get('/nasahubble/records')
+    return response.data
+  } catch (error) {
+    console.error('Erreur fetch hubble:', error)
   }
 }
 
 export {
-  getAllPlanets
+  getAllPlanets,
+  getAllHubblePictures
 }

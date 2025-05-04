@@ -5,7 +5,7 @@ const Stack = createNativeStackNavigator()
 
 function TravelsNavigator () {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name='Travels' component={TravelsScreen} />
     </Stack.Navigator>
   )
