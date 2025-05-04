@@ -38,8 +38,41 @@ Attachez vos ceintures, et embarquez pour une expérience interplanétaire inéd
 
 ## 3. Fonctionnalités
 
+### 3.1 Navigation 
+Navigation fluide entre les écrans via un système de navigation
+
+<img src="assets/images/Comet-5.gif" alt="comet-gif" width="200"/>
+
+### 3.2 Écran d'accueil 
+
+|Accueil | Hubble |
+|--|--|
+|Lien vers la page Planète |Carousel d'images issues du télescope spatial Hubble|
+
+<img src="assets/images/Comet-1.gif" alt="comet-gif" width="200"/>
+<img src="assets/images/Comet-2.gif" alt="comet-gif" width="200"/>
+
+### 3.3 Page Planètes 
+|Liste des planètes | Détail d'une planète |
+|--|--|
+| Flat List animée des planètes|Au clic sur une planète, l’utilisateur accède à une fiche détaillée contenant des informations enrichies|
+
+<img src="assets/images/Comet-3.gif" alt="comet-gif" width="200"/>
+<img src="assets/images/Comet-4.gif" alt="comet-gif" width="200"/>
+
 ## 4. API 
 
+L’application utilise des données à partir de l’API suivante :
+
+![alt text](assets/images/logo.png)
+
+**Datastro** - Portail de données ouvertes sur l'astronomie 
+
+https://www.datastro.eu/explore/?sort=explore.popularity_score
+
+Données utilisées :
+- Données système solaire : https://www.datastro.eu/explore/dataset/donnees-systeme-solaire-solar-system-data/api/?disjunctive.planete_planet&disjunctive.type_d_astre_type_of_planet&sort=-ordre_order
+- Images du télescope spatial Hubble de la NASA : https://www.datastro.eu/explore/dataset/nasahubble/api/?disjunctive.album_name_tags&sort=photo_title
 
 ## 💺 5. Tester le projet 
 
@@ -80,6 +113,11 @@ yarn install
 > ```
 > adb devices
 > ```
+> Si votre appareil est bien connecté :
+>```
+>List of devices attached
+>[NUMERO]     device
+>```
 >
 > 💻 **Sur émulateur** : Lancez un appareil virtuel depuis Android Studio > Device Manager, avant d’exécuter la commande yarn android.
 
@@ -109,5 +147,9 @@ cp .env.example .env
 ## 6. Références
 
 - [React Native Website](https://reactnative.dev) - Pour en savoir plus sur React Native.
+- [React Navigation](https://reactnavigation.org/docs/getting-started/) - Documentation Navigation React Native
+- [React Native Animated](https://reactnative.dev/docs/animated) - Documentation Animation React Native
+- [Animation Flat List](https://www.youtube.com/watch?v=wIh60UQzUKY) - Tutoriel Animation React Native
+- [Datastro API](https://www.datastro.eu/explore/?sort=explore.popularity_score) - Portail de données ouvertes sur l'astronomie 
 
 
